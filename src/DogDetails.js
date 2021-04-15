@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class DogDetails extends Component {
   render() {
-    return <div>dog details</div>;
+    return <div>{this.props.dog.name}</div>;
   }
 }
 

@@ -4,27 +4,29 @@ import { Link } from "react-router-dom";
 class Navbar extends Component {
   render() {
     return (
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link className="navbar-brand" to="/dogs">
           Dogs
         </Link>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
             {this.props.dogs.map(dog => {
               return (
-                <li class="nav-item active">
-                  <Link className="nav-link" to={`/dogs/${dog.name}`}>
+                <li className="nav-item active" key={dog.name}>
+                  <Link
+                    className="nav-link"
+                    to={`/dogs/${dog.name.toLowerCase()}`}>
                     {dog.name}
                   </Link>
                 </li>
